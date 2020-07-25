@@ -211,9 +211,9 @@ dem_row_1=[]
 dem_row_2=[]
 
 for i in range(len(lat_limb)):
-    line_1 = math.floor(((90.0-cellsize/2) - float(lat_limb[i]))/cellsize) + 6   #向上取整，+6是为了去掉开头6行说明文件，第一行纬度为90°-cellsize/2,因为数据是格网中心点数据，要减去格网的一半
+    line_1 = math.floor(((90.0-cellsize/2) - float(lat_limb[i]))/cellsize) + 6   
     line_2 = line_1 + 1
-    row_1 = abs(math.floor((float(lon_limb[i])-(-180+cellsize/2))/cellsize))   #dem数据第一行经度为-180°+cellsize/2,同理，要加上格网的一半
+    row_1 = abs(math.floor((float(lon_limb[i])-(-180+cellsize/2))/cellsize))  
     row_2 = row_1 + 1
 
     dem_line_1.append(line_1)
@@ -282,7 +282,7 @@ for i in range(len(h_order)):
     point_reorder[i].append(h_order[i])
 
 
-point_limb = sorted(point_reorder,key=(lambda x:x[0]),reverse=False)  #使用sorted排序
+point_limb = sorted(point_reorder,key=(lambda x:x[0]),reverse=False) 
 
 
 h_limb=[]
